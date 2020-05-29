@@ -1,0 +1,22 @@
+{
+  "name": "default-docker",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "William Koller",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -- -r esm -r dotenv/config index.js",
+    "start": "pm2 start index.js --watch --no-daemon --node-args=\"-r esm - dotenv/config\""
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "git-commit-msg-linter": "^2.4.2",
+    "mongoose": "^5.9.16",
+    "pm2": "^4.4.0",
+    "restify": "^8.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
