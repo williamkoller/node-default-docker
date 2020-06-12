@@ -1,15 +1,23 @@
-import './setup/db'
+import "./setup/db";
 
-import { server } from './setup/server'
-import { UserModel } from './model/user'
+import { server } from "./setup/server";
+import { UserModel } from "./model/user";
 
-server.get('/users', async (req, res) => {
+server.get("/users", async (req, res) => {
   try {
-    const users = await UserModel.find()
-    res.send(users)
+    const users = await UserModel.find();
+    res.send(users);
   } catch (error) {
-    res.send(500, error)
+    res.send(500, error);
   }
-})
+});
 
-server.start(() => console.log('Started'))
+server.post("/users", async (req, res) => {
+  try {
+    res.send({ message: "Ok" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+server.start(() => console.log("Started"));
